@@ -13,7 +13,7 @@ users = {
 def index():
     if 'user' not in session:
         return redirect(url_for('login'))
-    return render_template('home.html', advice=None, show_advice=False)
+    return render_template('index.html', advice=None, show_advice=False)
 
 # صفحة تسجيل الدخول
 @app.route('/login', methods=['GET', 'POST'])
@@ -52,7 +52,7 @@ def calculate():
     else:
         bmi_category = "سمنة"
 
-    return render_template("home.html", show_advice=True,
+    return render_template("index.html", show_advice=True,
                            name=name,
                            age=age,
                            bmi_category=bmi_category,
